@@ -1,0 +1,25 @@
+//crop gel out of in vitro image, for rhizosphere phenotyping
+//modify to your image specifications, position of the tissue culture gel in your images
+
+//Function making rectangles
+
+function action(input, output, filename) {
+        open(input + filename);
+        makeRectangle(1650, 1800, 475, 300);
+        run("Crop");
+        saveAs("Jpeg", output + filename);
+        close();
+}
+
+//File paths
+
+//Insert your file paths below
+
+input = 
+output = 
+
+//Draw files from directory
+
+list=getFileList(input);
+for (i=0; i < list.length; i++)
+	action(input, output, list[i]);
